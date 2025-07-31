@@ -51,7 +51,7 @@ export default function Home() {
           </div>
 
           {/* 夏に纏いたい香水 セクション */}
-          <div className="bg-white rounded-2xl border border-gray-100 p-6 mb-8">
+          <div className="bg-white rounded-2xl border border-gray-100 p-6">
             <div className="flex items-center justify-between mb-6">
               <span className="text-gray-700 font-medium">#夏に纏いたい香水</span>
               <span className="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-sm font-medium">
