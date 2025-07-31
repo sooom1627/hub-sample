@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="font-sans w-full h-full bg-gray-50">
       {/* ナビゲーションヘッダー */}
-      <nav className="flex justify-between items-center px-4 py-4 bg-white sticky top-0 z-50">
+      <nav className="flex justify-between items-center px-4 py-3 bg-white sticky top-0 z-50">
         <Image
           src="https://www.mistore.jp/content/dam/isetan_mitsukoshi/ci/common/logo-mi.svg"
           alt="logo"
@@ -21,18 +21,18 @@ export default function Home() {
 
       <main className="flex flex-col">
         {/* ヒーローセクション */}
-        <section className="bg-white px-6 py-16">
+        <section className="bg-white px-4 py-8">
           <div className="text-center">
-            <div className="mb-6">
+            <div className="mb-4">
               <span className="inline-block px-4 py-2 bg-gray-100 rounded-full text-sm text-gray-600 font-medium">
                 ✨ あなたの趣味を発見
               </span>
             </div>
-            <h1 className="text-4xl font-bold mb-6 leading-tight text-gray-900">
+            <h1 className="text-4xl font-bold mb-4 leading-tight text-gray-900">
               好きが見つかる、<br />
               ひろがる
             </h1>
-            <p className="text-lg text-gray-600 mb-10 leading-relaxed">
+            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
               同じ趣味を持つ人々とつながり、<br />
               新しい発見と体験を共有する
             </p>
@@ -43,10 +43,10 @@ export default function Home() {
         </section>
 
         {/* コミュニティショーケース */}
-        <section className="px-6 py-12">
-          <div className="bg-white rounded-2xl p-6">
-            <div className="mb-8">
-              <h2 className="text-2xl font-bold mb-3 text-gray-900">
+        <section className="px-4 py-6">
+          <div className="bg-white rounded-2xl p-4">
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold mb-2 text-gray-900">
                 コミュニティ
               </h2>
               <p className="text-base text-gray-600 leading-relaxed">
@@ -57,7 +57,7 @@ export default function Home() {
             
             <CommunityShowcase />
             
-            <div className="mt-6">
+            <div className="mt-4">
               <button className="w-full border border-gray-200 text-gray-900 py-3 rounded-xl font-medium text-base">
                 すべて見る
               </button>
@@ -66,10 +66,10 @@ export default function Home() {
         </section>
 
         {/* 人気テーマ */}
-        <section className="px-6 pb-12">
-          <div className="bg-white rounded-2xl p-6">
-            <div className="mb-8">
-              <h2 className="text-2xl font-bold mb-3 text-gray-900">
+        <section className="px-4 pb-6">
+          <div className="bg-white rounded-2xl p-4">
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold mb-2 text-gray-900">
                 今話題のテーマ
               </h2>
               <p className="text-base text-gray-600 leading-relaxed">
@@ -79,15 +79,15 @@ export default function Home() {
             </div>
 
             {/* テーマカード1 */}
-            <div className="bg-gray-50 rounded-2xl p-5 mb-6">
-              <div className="flex items-center justify-between mb-5">
+            <div className="bg-gray-50 rounded-2xl p-4 mb-4">
+              <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-gray-800">#夏に纏いたい香水</h3>
                 <span className="bg-white text-gray-700 px-3 py-1.5 rounded-lg text-sm font-medium">
                   Parfum
                 </span>
               </div>
               
-              <div className="grid grid-cols-2 gap-3 mb-5">
+              <div className="grid grid-cols-2 gap-2 mb-4">
                 <div className="aspect-square rounded-xl overflow-hidden">
                   <Image
                     src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=200&h=200&fit=crop&auto=format"
@@ -107,7 +107,7 @@ export default function Home() {
                   />
                 </div>
                 
-                <div className="col-span-2 grid grid-cols-3 gap-3">
+                <div className="col-span-2 grid grid-cols-3 gap-2">
                   <div className="aspect-square rounded-xl overflow-hidden">
                     <Image
                       src="https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=150&h=150&fit=crop&auto=format"
@@ -155,7 +155,7 @@ export default function Home() {
               </div>
               
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-5">
+                <div className="flex items-center gap-4">
                   <span className="text-sm text-gray-500 font-medium">128 コメント</span>
                   <span className="text-sm text-gray-500 font-medium">256 いいね</span>
                 </div>
@@ -166,15 +166,15 @@ export default function Home() {
             </div>
 
             {/* テーマカード2 */}
-            <div className="bg-gray-50 rounded-2xl p-5 mb-8">
-              <div className="flex items-center justify-between mb-5">
+            <div className="bg-gray-50 rounded-2xl p-4 mb-6">
+              <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-gray-800">#和菓子の美学</h3>
                 <span className="bg-white text-gray-700 px-3 py-1.5 rounded-lg text-sm font-medium">
                   わがしのわ
                 </span>
               </div>
               
-              <div className="grid grid-cols-2 gap-3 mb-5">
+              <div className="grid grid-cols-2 gap-2 mb-4">
                 <div className="aspect-square rounded-xl overflow-hidden">
                   <Image
                     src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=200&h=200&fit=crop&auto=format"
@@ -194,7 +194,7 @@ export default function Home() {
                   />
                 </div>
                 
-                <div className="col-span-2 grid grid-cols-3 gap-3">
+                <div className="col-span-2 grid grid-cols-3 gap-2">
                   <div className="aspect-square rounded-xl overflow-hidden">
                     <Image
                       src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=150&h=150&fit=crop&auto=format"
@@ -242,7 +242,7 @@ export default function Home() {
               </div>
               
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-5">
+                <div className="flex items-center gap-4">
                   <span className="text-sm text-gray-500 font-medium">89 コメント</span>
                   <span className="text-sm text-gray-500 font-medium">142 いいね</span>
                 </div>
@@ -259,12 +259,12 @@ export default function Home() {
         </section>
 
         {/* CTA セクション */}
-        <section className="px-6 pb-12">
-          <div className="bg-gray-900 rounded-2xl p-8 text-center text-white">
-            <h2 className="text-2xl font-bold mb-4">
+        <section className="px-4 pb-6">
+          <div className="bg-gray-900 rounded-2xl p-6 text-center text-white">
+            <h2 className="text-2xl font-bold mb-3">
               始めてみませんか？
             </h2>
-            <p className="text-base mb-8 opacity-90 leading-relaxed">
+            <p className="text-base mb-6 opacity-90 leading-relaxed">
               無料で今すぐ参加して、<br />
               あなたの趣味の世界を広げよう
             </p>
@@ -275,14 +275,14 @@ export default function Home() {
         </section>
 
         {/* フッター */}
-        <footer className="bg-white mx-6 mb-6 rounded-2xl p-6">
-          <div className="mb-8">
+        <footer className="bg-white mx-4 mb-4 rounded-2xl p-4">
+          <div className="mb-6">
             <Image
               src="https://www.mistore.jp/content/dam/isetan_mitsukoshi/ci/common/logo-mi.svg"
               alt="logo"
               width={100}
               height={50}
-              className="mb-4"
+              className="mb-3"
             />
             <p className="text-base text-gray-600 leading-relaxed">
               好きが見つかる、ひろがる。<br />
@@ -290,10 +290,10 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 gap-8 mb-8">
+          <div className="grid grid-cols-2 gap-6 mb-6">
             <div>
-              <h4 className="font-bold mb-4 text-gray-900 text-base">サービス</h4>
-              <ul className="space-y-3 text-sm text-gray-600">
+              <h4 className="font-bold mb-3 text-gray-900 text-base">サービス</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
                 <li><a href="#" className="block py-1">コミュニティ</a></li>
                 <li><a href="#" className="block py-1">テーマ</a></li>
                 <li><a href="#" className="block py-1">イベント</a></li>
@@ -301,8 +301,8 @@ export default function Home() {
             </div>
             
             <div>
-              <h4 className="font-bold mb-4 text-gray-900 text-base">サポート</h4>
-              <ul className="space-y-3 text-sm text-gray-600">
+              <h4 className="font-bold mb-3 text-gray-900 text-base">サポート</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
                 <li><a href="#" className="block py-1">ヘルプ</a></li>
                 <li><a href="#" className="block py-1">お問い合わせ</a></li>
                 <li><a href="#" className="block py-1">プライバシー</a></li>
@@ -310,7 +310,7 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="border-t border-gray-100 pt-6 text-center">
+          <div className="border-t border-gray-100 pt-4 text-center">
             <p className="text-sm text-gray-400">&copy; 2024 三越伊勢丹. All rights reserved.</p>
           </div>
         </footer>
