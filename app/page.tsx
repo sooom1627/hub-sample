@@ -9,9 +9,9 @@ import { Footer } from "@/src/ui/footer/Footer";
 
 export default function Home() {
   return (
-    <div className="font-sans w-full h-full bg-gradient-to-br from-gray-50 via-slate-50/50 to-zinc-50/30 relative overflow-hidden">
+    <div className="font-sans w-full min-h-screen bg-gradient-to-br from-gray-50 via-slate-50/50 to-zinc-50/30 relative">
       {/* 背景装飾 */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="fixed inset-0 opacity-20 pointer-events-none">
         <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-gray-200/30 to-slate-200/30 rounded-full blur-2xl"></div>
         <div className="absolute top-40 right-8 w-24 h-24 bg-gradient-to-r from-zinc-200/30 to-gray-200/30 rounded-full blur-xl"></div>
         <div className="absolute bottom-32 left-6 w-28 h-28 bg-gradient-to-r from-slate-200/30 to-zinc-200/30 rounded-full blur-xl"></div>

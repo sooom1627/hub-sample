@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function ThemesSection() {
   return (
-    <section className="relative px-2 pb-6 overflow-hidden">
+    <section className="relative pb-6 overflow-hidden">
       {/* テーマ背景装飾 */}
       <div className="absolute inset-0 bg-gradient-to-bl from-zinc-50/80 via-slate-50/70 to-gray-50/60"></div>
       <div className="absolute inset-0 opacity-15">
@@ -27,14 +27,15 @@ export function ThemesSection() {
         </div>
 
         {/* テーマカード1 */}
-        <div className="bg-gradient-to-br from-gray-50/70 to-blue-50/70 backdrop-blur-sm rounded-2xl p-2 mb-4 relative overflow-hidden">
+        <div className="relative bg-gradient-to-br from-blue-50/50 to-blue-50/70 backdrop-blur-sm rounded-2xl p-2 py-4 mb-4 overflow-hidden">
+        <p className="absolute top-2 left-2 text-blue-300 text-5xl">#</p>
           {/* カード内装飾 */}
           <div className="absolute top-2 right-2 w-8 h-8 bg-gray-300/30 rounded-full blur-md"></div>
           <div className="absolute bottom-2 left-2 w-6 h-6 bg-slate-300/30 rounded-full blur-sm"></div>
           
           <div className="relative p-2">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-semibold text-gray-800">#夏に纏いたい香水</h3>
+            <div className=" flex items-center justify-between mb-4">
+              <h3 className="text-lg font-semibold text-gray-800 ml-2">夏に纏いたい香水</h3>
               <span className="bg-white/95 backdrop-blur-sm text-gray-700 px-3 py-1.5 rounded-lg text-sm font-medium">
                 Parfum
               </span>
