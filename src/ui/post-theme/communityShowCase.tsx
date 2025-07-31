@@ -97,9 +97,9 @@ export function CommunityShowcase() {
   const currentCategory = categories.find((cat) => cat.id === selectedCategory);
 
   return (
-    <div className="bg-white overflow-hidden rounded-xl max-w-lg mx-auto">
+    <div className="flex flex-col md:items-center md:flex-row bg-white overflow-hidden rounded-xl w-full mx-auto">
       {/* メインコンテンツエリア */}
-      <div className="relative w-full mb-16">
+      <div className="relative w-full md:w-2/3 mb-16">
         <p className="text-base text-left mb-4 font-bold">
           {currentCategory?.content.subtitle}
         </p>
@@ -109,8 +109,9 @@ export function CommunityShowcase() {
             src={currentCategory?.content.headerImage || ""}
             alt={currentCategory?.content.title || ""}
             fill
-            className="object-cover rounded-xl"
+            className="object-cover rounded-xl aspect-[16/9]"
             sizes="(max-width: 768px) 100vw, 400px"
+						
           />
         </div>
 
@@ -144,7 +145,7 @@ export function CommunityShowcase() {
       </div>
 
       {/* カテゴリ選択エリア */}
-      <div className="px-4 ">
+      <div className="w-full md:w-1/3 px-4 ">
         <div className="grid grid-cols-3 gap-2">
           {categories.map((category) => (
             <div key={category.id} className="flex flex-col items-center gap-2">
