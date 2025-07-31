@@ -151,10 +151,10 @@ export function CommunityShowcase() {
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`flex flex-col justify-center items-center p-3  transition-all duration-200 rounded-full w-20 h-20 ${
+                className={`flex flex-col justify-center items-center p-3 transition-all duration-200 rounded-full w-20 h-20 ${
                   selectedCategory === category.id
-                    ? "bg-emerald-100 border-2 border-emerald-500"
-                    : "bg-white border-2 border-gray-200 hover:border-emerald-300"
+                    ? "bg-gradient-to-br from-emerald-100/80 to-emerald-200/60 backdrop-blur-sm scale-105"
+                    : "bg-white/80 backdrop-blur-sm hover:bg-gradient-to-br hover:from-gray-100/80 hover:to-gray-50/60 hover:scale-105"
                 }`}
               >
                 <div className="text-4xl mb-1">{category.icon}</div>
