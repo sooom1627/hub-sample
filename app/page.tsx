@@ -5,9 +5,17 @@ import { CommunityShowcase } from "@/src/ui/post-theme/communityShowCase";
 
 export default function Home() {
   return (
-    <div className="font-sans w-full h-full bg-gray-50">
+    <div className="font-sans w-full h-full bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30 relative overflow-hidden">
+      {/* 背景装飾 */}
+      <div className="absolute inset-0 opacity-40">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-blue-200/40 to-purple-200/40 rounded-full blur-2xl"></div>
+        <div className="absolute top-40 right-8 w-24 h-24 bg-gradient-to-r from-pink-200/40 to-orange-200/40 rounded-full blur-xl"></div>
+        <div className="absolute bottom-32 left-6 w-28 h-28 bg-gradient-to-r from-green-200/40 to-blue-200/40 rounded-full blur-xl"></div>
+        <div className="absolute bottom-60 right-12 w-20 h-20 bg-gradient-to-r from-purple-200/40 to-pink-200/40 rounded-full blur-lg"></div>
+      </div>
+
       {/* ナビゲーションヘッダー */}
-      <nav className="flex justify-between items-center px-4 py-3 bg-white sticky top-0 z-50">
+      <nav className="flex justify-between items-center px-4 py-3 bg-white/80 backdrop-blur-sm sticky top-0 z-50 relative">
         <Image
           src="https://www.mistore.jp/content/dam/isetan_mitsukoshi/ci/common/logo-mi.svg"
           alt="logo"
@@ -19,12 +27,12 @@ export default function Home() {
         </button>
       </nav>
 
-      <main className="flex flex-col">
+      <main className="flex flex-col relative">
         {/* ヒーローセクション */}
-        <section className="bg-white px-4 py-8">
+        <section className="bg-white/70 backdrop-blur-sm px-4 py-8 relative">
           <div className="text-center">
             <div className="mb-4">
-              <span className="inline-block px-4 py-2 bg-gray-100 rounded-full text-sm text-gray-600 font-medium">
+              <span className="inline-block px-4 py-2 bg-gray-100/80 backdrop-blur-sm rounded-full text-sm text-gray-600 font-medium">
                 ✨ あなたの趣味を発見
               </span>
             </div>
@@ -43,8 +51,8 @@ export default function Home() {
         </section>
 
         {/* コミュニティショーケース */}
-        <section className="px-4 py-6">
-          <div className="bg-white rounded-2xl p-4">
+        <section className="px-2 py-6 relative">
+          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-4">
             <div className="mb-6">
               <h2 className="text-2xl font-bold mb-2 text-gray-900">
                 コミュニティ
@@ -58,7 +66,7 @@ export default function Home() {
             <CommunityShowcase />
             
             <div className="mt-4">
-              <button className="w-full border border-gray-200 text-gray-900 py-3 rounded-xl font-medium text-base">
+              <button className="w-full bg-gray-100 text-gray-900 py-3 rounded-xl font-medium text-base">
                 すべて見る
               </button>
             </div>
@@ -66,8 +74,8 @@ export default function Home() {
         </section>
 
         {/* 人気テーマ */}
-        <section className="px-4 pb-6">
-          <div className="bg-white rounded-2xl p-4">
+        <section className="px-2 pb-6 relative">
+          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-2">
             <div className="mb-6">
               <h2 className="text-2xl font-bold mb-2 text-gray-900">
                 今話題のテーマ
@@ -79,10 +87,10 @@ export default function Home() {
             </div>
 
             {/* テーマカード1 */}
-            <div className="bg-gray-50 rounded-2xl p-4 mb-4">
+            <div className="bg-gradient-to-br from-gray-50/80 to-blue-50/60 backdrop-blur-sm rounded-2xl p-4 mb-4">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-gray-800">#夏に纏いたい香水</h3>
-                <span className="bg-white text-gray-700 px-3 py-1.5 rounded-lg text-sm font-medium">
+                <span className="bg-white/80 backdrop-blur-sm text-gray-700 px-3 py-1.5 rounded-lg text-sm font-medium">
                   Parfum
                 </span>
               </div>
@@ -137,7 +145,7 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <div className="aspect-square rounded-xl bg-white flex items-center justify-center">
+                <div className="aspect-square rounded-xl bg-white/80 backdrop-blur-sm flex items-center justify-center">
                   <div className="text-center">
                     <div className="text-lg font-bold text-gray-700">SUMMER</div>
                     <div className="text-xs text-gray-500 font-medium">COLLECTION</div>
@@ -154,22 +162,19 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <span className="text-sm text-gray-500 font-medium">128 コメント</span>
-                  <span className="text-sm text-gray-500 font-medium">256 いいね</span>
-                </div>
+              <div className="flex items-center justify-center">
+   
                 <button className="bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-medium">
-                  詳細を見る
+                  もっと見る
                 </button>
               </div>
             </div>
 
             {/* テーマカード2 */}
-            <div className="bg-gray-50 rounded-2xl p-4 mb-6">
+            <div className="bg-gradient-to-br from-gray-50/80 to-orange-50/60 backdrop-blur-sm rounded-2xl p-4 mb-6">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-gray-800">#和菓子の美学</h3>
-                <span className="bg-white text-gray-700 px-3 py-1.5 rounded-lg text-sm font-medium">
+                <span className="bg-white/80 backdrop-blur-sm text-gray-700 px-3 py-1.5 rounded-lg text-sm font-medium">
                   わがしのわ
                 </span>
               </div>
@@ -224,7 +229,7 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <div className="aspect-square rounded-xl bg-white flex items-center justify-center">
+                <div className="aspect-square rounded-xl bg-white/80 backdrop-blur-sm flex items-center justify-center">
                   <div className="text-center">
                     <div className="text-lg font-bold text-gray-700">和の心</div>
                     <div className="text-xs text-gray-500 font-medium">JAPANESE</div>
@@ -252,30 +257,36 @@ export default function Home() {
               </div>
             </div>
 
-            <button className="w-full bg-gray-100 text-gray-900 py-4 rounded-xl font-semibold text-base">
+            <button className="w-full bg-gradient-to-r from-gray-100 to-gray-50 text-gray-900 py-4 rounded-xl font-semibold text-base">
               すべてのテーマを見る
             </button>
           </div>
         </section>
 
         {/* CTA セクション */}
-        <section className="px-4 pb-6">
-          <div className="bg-gray-900 rounded-2xl p-6 text-center text-white">
-            <h2 className="text-2xl font-bold mb-3">
-              始めてみませんか？
-            </h2>
-            <p className="text-base mb-6 opacity-90 leading-relaxed">
-              無料で今すぐ参加して、<br />
-              あなたの趣味の世界を広げよう
-            </p>
-            <button className="w-full bg-white text-gray-900 py-4 rounded-xl font-bold text-lg">
-              無料で始める
-            </button>
+        <section className="px-4 pb-6 relative">
+          <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-6 text-center text-white relative overflow-hidden">
+            {/* CTA内の装飾 */}
+            <div className="absolute top-2 right-4 w-12 h-12 bg-white/10 rounded-full blur-lg"></div>
+            <div className="absolute bottom-3 left-3 w-8 h-8 bg-white/10 rounded-full blur-md"></div>
+            
+            <div className="relative">
+              <h2 className="text-2xl font-bold mb-3">
+                始めてみませんか？
+              </h2>
+              <p className="text-base mb-6 opacity-90 leading-relaxed">
+                無料で今すぐ参加して、<br />
+                あなたの趣味の世界を広げよう
+              </p>
+              <button className="w-full bg-white text-gray-900 py-4 rounded-xl font-bold text-lg">
+                無料で始める
+              </button>
+            </div>
           </div>
         </section>
 
         {/* フッター */}
-        <footer className="bg-white mx-4 mb-4 rounded-2xl p-4">
+        <footer className="bg-white/70 backdrop-blur-sm mx-4 mb-4 rounded-2xl p-4 relative">
           <div className="mb-6">
             <Image
               src="https://www.mistore.jp/content/dam/isetan_mitsukoshi/ci/common/logo-mi.svg"
@@ -310,7 +321,7 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="border-t border-gray-100 pt-4 text-center">
+          <div className="pt-4 text-center">
             <p className="text-sm text-gray-400">&copy; 2024 三越伊勢丹. All rights reserved.</p>
           </div>
         </footer>
