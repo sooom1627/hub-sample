@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 // カテゴリのデータ型定義
@@ -47,7 +48,7 @@ const categories: Category[] = [
     },
   },
   {
-    id: "parfum",
+    id: "perfume",
     name: "Parfum",
     icon: "🌸",
     content: {
@@ -61,7 +62,7 @@ const categories: Category[] = [
     },
   },
   {
-    id: "apothecary",
+    id: "beauty",
     name: "My apothecary",
     icon: "🧴",
     content: {
@@ -75,7 +76,7 @@ const categories: Category[] = [
     },
   },
   {
-    id: "gaikoku",
+    id: "foreign-exhibitions",
     name: "外国酒",
     icon: "🍷",
     content: {
@@ -116,12 +117,12 @@ export function CommunityShowcase() {
           {currentCategory?.content.subtitle}
         </p>
         {/* メイン画像 */}
-        <div className="relative w-full h-60 md:h-92 overflow-hidden">
+        <div className="relative w-full h-60 md:h-92 overflow-hidden animate-fade-in">
           <Image
             src={currentCategory?.content.headerImage || ""}
             alt={currentCategory?.content.title || ""}
             fill
-            className="object-cover rounded-xl aspect-[16/9]"
+            className="object-cover rounded-xl aspect-[16/9] animate-fade-in"
           />
         </div>
 
@@ -147,9 +148,11 @@ export function CommunityShowcase() {
                 </div>
               </div>
             </div>
-            <button className="border-2 border-emerald-600 text-emerald-600 px-6 py-2 rounded-full hover:bg-emerald-700 hover:text-white transition-colors font-medium text-sm">
-              詳細をみる
-            </button>
+            <Link href={`/communities/${currentCategory?.id}`} className="cursor-pointer">
+              <button className="cursor-pointer border-2 border-emerald-600 text-emerald-600 px-6 py-2 rounded-full hover:bg-emerald-700 hover:text-white transition-colors font-medium text-sm">
+                詳細をみる
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -162,7 +165,7 @@ export function CommunityShowcase() {
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`flex flex-col justify-center items-center p-3 transition-all duration-200 rounded-full w-20 h-20 ${
+                className={`flex flex-col justify-center cursor-pointer items-center p-3 transition-all duration-200 rounded-full w-20 h-20 ${
                   selectedCategory === category.id
                     ? "bg-gradient-to-br from-emerald-100/80 to-emerald-200/60 backdrop-blur-sm scale-105"
                     : "bg-white/80 backdrop-blur-sm hover:bg-gradient-to-br hover:from-gray-100/80 hover:to-gray-50/60 hover:scale-105"
