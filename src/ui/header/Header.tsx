@@ -13,7 +13,7 @@ export function Header() {
         height={80}
       />
       </Link>
-      <button className="bg-emerald-600 text-white px-5 py-2.5 rounded-lg text-sm font-bold">
+      <button className="bg-blue-950 text-white px-5 py-2.5 rounded-lg text-sm font-bold">
         登録する
       </button>
       </div>

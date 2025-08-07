@@ -1,15 +1,17 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface CommunityCardProps {
   imageUrl: string;
   imageAlt: string;
   title: string;
   description: string;
+  communityId: string;
 }
 
-export function CommunityCard({ imageUrl, imageAlt, title, description }: CommunityCardProps) {
+export function CommunityCard({ imageUrl, imageAlt, title, description, communityId }: CommunityCardProps) {
   return (
-    <div className="flex flex-row gap-2 bg-white rounded-2xl shadow-xl">
+    <Link href={`/communities/${communityId}`} className="flex flex-row gap-2 bg-white rounded-2xl shadow-xl">
       <Image
         src={imageUrl}
         alt={imageAlt}
@@ -25,6 +27,6 @@ export function CommunityCard({ imageUrl, imageAlt, title, description }: Commun
           {description}
         </span>
       </div>
-    </div>
+    </Link>
   );
 }

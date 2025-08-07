@@ -1,14 +1,17 @@
-'use client';
-
-import { Header } from "@/src/ui/header/Header";
-import { HomePageLayout } from "@/src/components/layout/HomePageLayout";
-import { MainContent } from "@/src/components/layout/MainContent";
+import { HeroSection } from "@/src/ui/hero/HeroSection";
+import { CommunitySection } from "@/src/ui/community/CommunitySection";
+import { ThemesSection } from "@/src/ui/themes/ThemesSection";
+import { EventList } from "@/src/ui/event-list/EventList";
+import { CTASection } from "@/src/ui/cta/CTASection";
 
 export default function Home() {
   return (
-    <HomePageLayout>
-      <Header />
-      <MainContent />
-    </HomePageLayout>
+    <>
+      <HeroSection />
+      <CommunitySection />
+      <ThemesSection />
+      <EventList />
+      <CTASection />
+    </>
   );
 }
