@@ -1,8 +1,8 @@
 export function HeroSection() {
   return (
-    <section className="relative md:py-8 overflow-hidden bg-white">
-      <div className="relative flex flex-col justify-between items-center md:flex-row text-center bg-gray-300/50 backdrop-blur-md md:rounded-2xl p-6">
-        <div className="md:w-2/3">
+    <section className="relative md:py-8 overflow-hidden">
+      <div className="relative flex flex-col justify-around items-center md:h-96 h-fit md:flex-row text-center bg-gray-300/50 backdrop-blur-md md:rounded-2xl py-14 md:px-10">
+        <div className="md:w-1/2">
           <div className="mb-4">
             <span className="inline-block px-4 py-2 backdrop-blur-sm rounded-full text-sm text-gray-700 font-medium">
               ✨ あなたの趣味を発見
@@ -21,7 +21,7 @@ export function HeroSection() {
         </div>
         <div className="flex justify-center md:w-1/3">
           <button className="w-full h-fit bg-emerald-600 text-white py-4 px-4 rounded-xl font-semibold text-lg hover:bg-emerald-700 transition-colors duration-200">
-            今すぐ始める
+            コミュニティに参加する
           </button>
         </div>
       </div>

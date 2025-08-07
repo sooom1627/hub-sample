@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // カテゴリのデータ型定義
 type Category = {
@@ -26,7 +26,7 @@ const categories: Category[] = [
       title: "LE TOUR DU CHOCOLAT",
       subtitle: "チョコレートが好きなあなたに",
       headerImage:
-        "https://le-tourduchocolat.mistore.jp/isetan_choco_92x61.8c438696880c22171cde.webp",
+        "/isetan_choco_92x61.png",
       participants: 1500,
       posts: 8000,
       circleImage: "/chocolate-community.jpg",
@@ -40,7 +40,7 @@ const categories: Category[] = [
       title: "わがしのわ",
       subtitle: "和菓子を愛する人たちのコミュニティ",
       headerImage:
-        "https://wagashinowa.mistore.jp/isetan_wagashi_92x61.e1a906d51536c2c2f652.webp",
+        "/isetan_wagashi_92x61.png",
       participants: 800,
       posts: 3200,
       circleImage: "/wagashi-community.jpg",
@@ -54,7 +54,7 @@ const categories: Category[] = [
       title: "Parfum",
       subtitle: "香りの世界を探求しよう",
       headerImage:
-        "https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&h=300&fit=crop&auto=format",
+        "/isetan_parfun_92x61.png",
       participants: 1200,
       posts: 5400,
       circleImage: "/parfum-community.jpg",
@@ -68,7 +68,7 @@ const categories: Category[] = [
       title: "My apothecary",
       subtitle: "ナチュラルケアの探求",
       headerImage:
-        "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&h=300&fit=crop&auto=format",
+        "/isetan_my_apothecary_92x61.png",
       participants: 950,
       posts: 4100,
       circleImage: "/apothecary-community.jpg",
@@ -82,7 +82,7 @@ const categories: Category[] = [
       title: "外国酒",
       subtitle: "世界の酒文化を楽しもう",
       headerImage:
-        "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&h=300&fit=crop&auto=format",
+        "/isetan_gaikokuten_92x61.png",
       participants: 600,
       posts: 2800,
       circleImage: "/alcohol-community.jpg",
@@ -95,41 +95,51 @@ export function CommunityShowcase() {
   const [selectedCategory, setSelectedCategory] = useState<string>("chocolate");
 
   const currentCategory = categories.find((cat) => cat.id === selectedCategory);
+  
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSelectedCategory((current) => {
+        const currentIndex = categories.findIndex((cat) => cat.id === current);
+        const nextIndex = (currentIndex + 1) % categories.length;
+        return categories[nextIndex].id;
+      });
+    }, 5000); // 5秒ごとに変更
+
+    return () => clearInterval(timer); // クリーンアップ
+  }, []);
 
   return (
-    <div className="flex flex-col md:items-center md:flex-row bg-white overflow-hidden rounded-xl w-full mx-auto">
+    <div className="flex flex-col md:items-center md:flex-row overflow-hidden rounded-xl w-full mx-auto md:gap-4">
       {/* メインコンテンツエリア */}
       <div className="relative w-full md:w-2/3 mb-16">
         <p className="text-base text-left mb-4 font-bold">
           {currentCategory?.content.subtitle}
         </p>
         {/* メイン画像 */}
-        <div className="relative w-full h-60 overflow-hidden">
+        <div className="relative w-full h-60 md:h-92 overflow-hidden">
           <Image
             src={currentCategory?.content.headerImage || ""}
             alt={currentCategory?.content.title || ""}
             fill
             className="object-cover rounded-xl aspect-[16/9]"
-            sizes="(max-width: 768px) 100vw, 400px"
-						
           />
         </div>
 
         {/* 統計情報エリア */}
-        <div className="absolute bottom-[-40px] left-0 right-0 bg-white p-4 shadow-lg rounded-xl mx-2">
+        <div className="absolute bottom-[-40px] left-0 right-0 bg-white p-4 shadow-lg rounded-xl mx-2 md:mx-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="text-center">
-                <div className="text-sm text-gray-800">参加者</div>
-                <div className="text-sm font-bold text-zinc-800">
+                <div className="text-sm md:text-base text-gray-800">参加者</div>
+                <div className="text-sm md:text-base font-bold text-zinc-800">
                   {currentCategory?.content.participants.toLocaleString()}{" "}
                   <span className="text-xs font-normal text-gray-800">名</span>
                 </div>
               </div>
               <div className="w-px h-12 bg-gray-200"></div>
               <div className="text-center">
-                <div className="text-sm text-gray-800">投稿数</div>
-                <div className="text-sm font-bold text-zinc-800">
+                <div className="text-sm md:text-base text-gray-800">投稿数</div>
+                <div className="text-sm md:text-base font-bold text-zinc-800">
                   {currentCategory?.content.posts.toLocaleString()}{" "}
                   <span className="text-xs font-normal text-gray-800">
                     投稿
@@ -146,7 +156,7 @@ export function CommunityShowcase() {
 
       {/* カテゴリ選択エリア */}
       <div className="w-full md:w-1/3 px-4 ">
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-3 gap-2 md:gap-4">
           {categories.map((category) => (
             <div key={category.id} className="flex flex-col items-center gap-2">
               <button
