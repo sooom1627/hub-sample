@@ -3,20 +3,21 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 interface CommunityPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function CommunityPage({ params }: CommunityPageProps) {
-  const community = getCommunityById(params.id);
+export default async function CommunityPage({ params }: CommunityPageProps) {
+  const { id } = await params;
+  const community = getCommunityById(id);
 
   if (!community) {
     notFound();
   }
 
   return (
-    <div className="py-8 px-4">
+    <div className="">
       <div className={`srounded-3xl mb-8 text-center`}>
         <div className="flex justify-center mb-4">
           <Image
@@ -24,10 +25,10 @@ export default function CommunityPage({ params }: CommunityPageProps) {
             alt={community.imageAlt}
             width={120}
             height={80}
-            className="rounded-xl aspect-[92/61] object-cover w-full"
+            className="aspect-[92/61] object-cover w-full"
           />
         </div>
-        <div className="flex items-start gap-4 bg-white rounded-2xl p-4">
+        <div className="flex items-start gap-4 bg-white rounded-2xl p-4 mx-2">
           <div className="flex-1">
             <h1 className="text-xl font-bold text-gray-900 mb-2">
               {community.name}
