@@ -28,6 +28,33 @@ let events = [
     category: "外国展コミュニティ",
     title: "【イベント】日本橋三越本店 英国展ブランドご試食イベント ☕",
     url:"https://gaikokuten.mistore.jp/article/topic/3438/"
+  },
+  {
+    id: 4,
+    imageUrl: "/event4.jpeg",
+    imageAlt: "イベント4",
+    communityId: "beauty",
+    category: "my APOTHECARY",
+    title: "NEW！【イベント】 BALLON オラクルアロマリーディング",
+    url:"https://beautycommunity.mistore.jp/article/topic/2836/"
+  },
+  {
+    id: 5,
+    imageUrl: "/event5.jpeg",
+    imageAlt: "イベント5",
+    communityId: "perfume",
+    category: "Parfun",
+    title: "【イベント】　＜athletia＞感情からインスピレーションを得て作られた新しいオードパルファンご紹介",
+    url:"https://parfun.mistore.jp/article/topic/2460/"
+  },
+  {
+    id: 6,
+    imageUrl: "/event6.jpeg",
+    imageAlt: "イベント6",
+    communityId: "perfume",
+    category: "Parfun",
+    title: "【イベント】　セミナー＜MAISON DE L'ASIE/メゾン ド ラズィ＞～香りで巡るアジアの旅",
+    url:"https://parfun.mistore.jp/article/topic/2450/"
   }
 ];
 
@@ -57,7 +84,9 @@ export function EventList({communityId}: {communityId: string}) {
         </div>
         ):(
           <div className="text-center text-gray-500 w-full bg-white rounded-lg p-4">
-            イベント絶賛企画中！<br />しばしお待ちください！
+            <p>イベント絶賛企画中！<br />
+            </p>
+            <p className="text-blue-500 underline">他のコミュニティのイベントはこちら</p>
           </div>
         )}
         

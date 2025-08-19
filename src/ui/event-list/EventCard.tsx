@@ -15,8 +15,8 @@ export function EventCard({ imageUrl, imageAlt, category, title, url }: EventCar
       <Image 
         src={imageUrl}
         alt={imageAlt}
-        width={100} 
-        height={100} 
+        width={300} 
+        height={200} 
         className="w-full object-cover rounded-t-lg aspect-[92/61]"
       />
       <div className="flex flex-col gap-2 px-4 py-2">

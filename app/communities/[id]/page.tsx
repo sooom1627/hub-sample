@@ -22,17 +22,17 @@ export default async function CommunityPage({ params }: CommunityPageProps) {
     <div className="">
       <div className={`srounded-3xl mb-8 text-center`}>
         {/* コミュニティ情報 */}
-        <div className="flex flex-col justify-center mb-4">
+        <div className="flex flex-col justify-center mb-4 md:flex-row md:my-4">
           <Image
             src={community.imageUrl}
             alt={community.imageAlt}
             width={300}
             height={200}
-            className="object-cover aspect-[92/61] w-full"
+            className="object-cover aspect-[92/61] w-full md:w-1/2 md:rounded-2xl"
           />
-          <div className="flex items-start gap-4 bg-white rounded-2xl p-4 mx-4 mt-[-60px]">
+          <div className="flex items-start gap-4 bg-white rounded-2xl p-4 mx-4 mt-[-60px] md:mt-0">
             <div className="flex-1 flex flex-col gap-2">
-              <div className="flex flex-row gap-4 items-center ">
+              <div className="flex flex-row gap-4 items-center justify-center">
                 <Image
                   src={community.logoUrl}
                   alt="isetan_choco_logo"
@@ -44,7 +44,6 @@ export default async function CommunityPage({ params }: CommunityPageProps) {
                   {community.description}
                 </p>
               </div>
-              <div></div>
               <div className="flex items-center justify-between gap-8 text-sm text-gray-600 mb-4">
                 <div className="text-center">
                   <div className="text-gray-500">参加者</div>
@@ -81,7 +80,7 @@ export default async function CommunityPage({ params }: CommunityPageProps) {
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
               {/* イベントカード1 */}
-              <div className="rounded-2xl overflow-hidden flex-shrink-0 w-3/5">
+              <div className="rounded-2xl overflow-hidden flex-shrink-0 w-3/5 md:w-3/12">
                 <div className="relative">
                   <Image
                     src="/pickup1.webp"
@@ -99,7 +98,7 @@ export default async function CommunityPage({ params }: CommunityPageProps) {
               </div>
 
               {/* イベントカード1 */}
-              <div className="rounded-2xl overflow-hidden flex-shrink-0 w-3/5">
+              <div className="rounded-2xl overflow-hidden flex-shrink-0 w-3/5 md:w-3/12">
                 <div className="relative">
                   <Image
                     src="/pickup2.webp"
@@ -117,7 +116,7 @@ export default async function CommunityPage({ params }: CommunityPageProps) {
               </div>
 
               {/* イベントカード1 */}
-              <div className="rounded-2xl overflow-hidden flex-shrink-0 w-3/5">
+              <div className="rounded-2xl overflow-hidden flex-shrink-0 w-3/5 md:w-3/12">
                 <div className="relative">
                   <Image
                     src="/pickup3.webp"
