@@ -140,7 +140,7 @@ export default async function CommunityPage({ params }: CommunityPageProps) {
             <ThemesSection communityId={id} />
 
             {/* イベント */}
-            <EventList />
+            <EventList communityId={id} />
           </div>
         </div>
       </div>

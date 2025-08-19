@@ -9,8 +9,8 @@ export default function Home() {
     <>
       <HeroSection />
       <CommunitySection />
-      <ThemesSection />
-      <EventList />
+      <ThemesSection communityId="" />
+      <EventList communityId="" />
       <CTASection />
     </>
   );

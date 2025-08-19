@@ -31,7 +31,7 @@ let events = [
   }
 ];
 
-export function EventList(communityId: string) {
+export function EventList({communityId}: {communityId: string}) {
   if (communityId) {
     events = events.filter((event) => event.communityId === communityId);
   }else{
