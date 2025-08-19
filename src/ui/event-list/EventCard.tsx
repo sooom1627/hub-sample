@@ -1,15 +1,17 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface EventCardProps {
   imageUrl: string;
   imageAlt: string;
   category: string;
   title: string;
+  url: string;
 }
 
-export function EventCard({ imageUrl, imageAlt, category, title }: EventCardProps) {
+export function EventCard({ imageUrl, imageAlt, category, title, url }: EventCardProps) {
   return (
-    <div className="bg-white rounded-2xl">
+    <Link href={url} className="bg-white rounded-2xl" target="_blank">
       <Image 
         src={imageUrl}
         alt={imageAlt}
@@ -25,6 +27,6 @@ export function EventCard({ imageUrl, imageAlt, category, title }: EventCardProp
           {title}
         </h3>
       </div>
-    </div>
+    </Link>
   );
 }

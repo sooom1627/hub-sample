@@ -1,4 +1,6 @@
 import { getCommunityById } from "@/src/data/communities";
+import { EventList } from "@/src/ui/event-list/EventList";
+import { ThemesSection } from "@/src/ui/themes/ThemesSection";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
@@ -19,112 +21,128 @@ export default async function CommunityPage({ params }: CommunityPageProps) {
   return (
     <div className="">
       <div className={`srounded-3xl mb-8 text-center`}>
-        <div className="flex justify-center mb-4">
+        {/* コミュニティ情報 */}
+        <div className="flex flex-col justify-center mb-4">
           <Image
             src={community.imageUrl}
             alt={community.imageAlt}
-            width={120}
-            height={80}
-            className="aspect-[92/61] object-cover w-full"
+            width={300}
+            height={200}
+            className="object-cover aspect-[92/61] w-full"
           />
-        </div>
-        <div className="flex items-start gap-4 bg-white rounded-2xl p-4 mx-2">
-          <div className="flex-1">
-            <h1 className="text-xl font-bold text-gray-900 mb-2">
-              {community.name}
-            </h1>
-            <p className="text-gray-600 mb-4 text-sm">
-              {community.description}
-            </p>
-            <div className="flex items-center justify-between gap-8 text-sm text-gray-600 mb-4">
-              <div className="text-center">
-                <div className="text-gray-500">参加者</div>
-                <div className="font-semibold">
-                  {community.memberCount.toLocaleString()}名
-                </div>
+          <div className="flex items-start gap-4 bg-white rounded-2xl p-4 mx-4 mt-[-60px]">
+            <div className="flex-1 flex flex-col gap-2">
+              <div className="flex flex-row gap-4 items-center ">
+                <Image
+                  src={community.logoUrl}
+                  alt="isetan_choco_logo"
+                  width={100}
+                  height={100}
+                  className="rounded-2xl w-20 h-20"
+                />
+                <p className="text-gray-600 text-sm text-left">
+                  {community.description}
+                </p>
               </div>
-              <div className="text-center">
-                <div className="text-gray-500">投稿数</div>
-                <div className="font-semibold">
-                  {community.postCount.toLocaleString()}投稿
+              <div></div>
+              <div className="flex items-center justify-between gap-8 text-sm text-gray-600 mb-4">
+                <div className="text-center">
+                  <div className="text-gray-500">参加者</div>
+                  <div className="font-semibold">
+                    {community.memberCount.toLocaleString()}名
+                  </div>
                 </div>
+                <div className="text-center">
+                  <div className="text-gray-500">投稿数</div>
+                  <div className="font-semibold">
+                    {community.postCount.toLocaleString()}投稿
+                  </div>
+                </div>
+                <button className="bg-blue-950 text-white px-8 py-2 rounded-full text-sm font-medium hover:bg-blue-900 transition-colors">
+                  参加する {">"}
+                </button>
               </div>
-              <button className="bg-blue-950 text-white px-8 py-2 rounded-full text-sm font-medium hover:bg-blue-900 transition-colors">
-                参加する {">"}
-              </button>
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-bold text-gray-900">最新の投稿</h2>
-        <button
-          className={`${community.buttonColor} text-white px-6 py-2 rounded-full text-sm font-medium transition-colors`}
-        >
-          投稿する
-        </button>
-      </div>
-
-      <div className="space-y-6">
-        {community.posts.map((post) => (
-          <article
-            key={post.id}
-            className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
-          >
-            <div className="flex items-center gap-2 mb-3">
-              <span
-                className={`text-xs ${community.tagColor} px-3 py-1 rounded-full font-medium`}
-              >
-                {community.name}
-              </span>
-              <span className="text-xs text-gray-500">{post.createdAt}</span>
+        <div className="">
+          {/* 最新情報セクション */}
+          <div className="mb-4 ">
+            <div className="flex items-center gap-2 mb-4 px-4 mt-8">
+              <span className="text-xl">📢</span>
+              <h2 className="text-lg font-bold text-red-500">
+                最新情報をPICK UP
+              </h2>
             </div>
 
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
-              {post.title}
-            </h3>
-
-            <p className="text-gray-600 text-sm mb-4">{post.content}</p>
-
-            <div className="flex items-center justify-between">
-              <span className="text-xs text-gray-500">
-                投稿者: {post.author}
-              </span>
-
-              <div className="flex items-center gap-4 text-xs text-gray-500">
-                <span className="flex items-center gap-1">
-                  <svg
-                    className="w-4 h-4"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  {post.likes}
-                </span>
-                <span className="flex items-center gap-1">
-                  <svg
-                    className="w-4 h-4"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  {post.comments}
-                </span>
+            {/* イベントカード横スクロール */}
+            <div
+              className="flex gap-4 overflow-x-auto scrollbar-hide px-4"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            >
+              {/* イベントカード1 */}
+              <div className="rounded-2xl overflow-hidden flex-shrink-0 w-3/5">
+                <div className="relative">
+                  <Image
+                    src="/pickup1.webp"
+                    alt="和菓子総選挙イベント"
+                    width={300}
+                    height={200}
+                    className="object-cover aspect-[92/61] w-full rounded-2xl"
+                  />
+                </div>
+                <div className="px-1 py-2">
+                  <h3 className="text-sm text-gray-900 mb-2 font-bold text-left line-clamp-3">
+                  【コミュニティ】新コミュニティ『外国展コミュニティ』オープン！🌈
+                  </h3>
+                </div>
               </div>
+
+              {/* イベントカード1 */}
+              <div className="rounded-2xl overflow-hidden flex-shrink-0 w-3/5">
+                <div className="relative">
+                  <Image
+                    src="/pickup2.webp"
+                    alt="和菓子総選挙イベント"
+                    width={300}
+                    height={200}
+                    className="object-cover aspect-[92/61] w-full rounded-2xl"
+                  />
+                </div>
+                <div className="px-1 py-2">
+                  <h3 className="text-sm text-gray-900 mb-2 font-bold text-left line-clamp-3">
+                  メンバー厳選の絶品イートイン🥰🍫をまとめてチェック！😘週末にぜひ！
+                  </h3>
+                </div>
+              </div>
+
+              {/* イベントカード1 */}
+              <div className="rounded-2xl overflow-hidden flex-shrink-0 w-3/5">
+                <div className="relative">
+                  <Image
+                    src="/pickup3.webp"
+                    alt="和菓子総選挙イベント"
+                    width={300}
+                    height={200}
+                    className="object-cover aspect-[92/61] w-full rounded-2xl"
+                  />
+                </div>
+                <div className="px-1 py-2">
+                  <h3 className="text-sm text-gray-900 mb-2 font-bold text-left line-clamp-3">
+                  【1人1票】和菓子 総選挙推し和菓子に投票しよう！〜〜〜〜
+                  </h3>
+                </div>
+              </div>
+
             </div>
-          </article>
-        ))}
+
+            {/* 投稿テーマ */}
+            <ThemesSection communityId={id} />
+
+            {/* イベント */}
+            <EventList />
+          </div>
+        </div>
       </div>
     </div>
   );

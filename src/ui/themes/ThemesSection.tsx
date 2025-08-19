@@ -1,11 +1,12 @@
 import { ThemeCard } from "./ThemeCard";
 
-export function ThemesSection() {
+export function ThemesSection({communityId}: {communityId: string}) {
   // テーマデータ
-  const themes = [
+  let themes = [
     {
       backgroundColor: "#F1FAFA",
       communityName: "Parfun",
+      communityId: "perfume",
       title: "夏に纏いたい香水",
       hashColor: "text-blue-300/80",
       mainImages: [
@@ -37,6 +38,7 @@ export function ThemesSection() {
     {
       backgroundColor: "#FFF8F2",
       communityName: "外国展コミュニティ",
+      communityId: "foreign-exhibitions",
       title: "英国展ベストバイ",
       hashColor: "text-orange-300/80",
       mainImages: [
@@ -68,7 +70,8 @@ export function ThemesSection() {
     {
       backgroundColor: "#FDF7E6",
       communityName: "わがしのわ",
-      title: "栗きんとん",
+      communityId: "wagashi",
+      title: "暑い夏の日に食べたい和菓子",
       hashColor: "text-amber-300/80",
       mainImages: [
         {
@@ -100,7 +103,113 @@ export function ThemesSection() {
       },
       className: "mt-[-36px] md:mt-0",
     },
+    {
+      backgroundColor: "#E4DAD3",
+      communityName: "Le tour du chocolat",
+      communityId: "chocolate",
+      title: "絶品イートイン！",
+      hashColor: "text-orange-900",
+      mainImages: [
+        {
+          src: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=200&h=200&fit=crop&auto=format",
+          alt: "チョコレート1",
+        },
+      ],
+      bottomImages: [
+        {
+          src: "https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=150&h=150&fit=crop&auto=format",
+          alt: "チョコレート2",
+        },
+      ],
+      className: "",
+    },
+    {
+      backgroundColor: "#E4DAD3",
+      communityName: "Le tour du chocolat",
+      communityId: "chocolate",
+      title: "🌴夏のチョコスイーツ🍨",
+      hashColor: "text-orange-900",
+      mainImages: [
+        {
+          src: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=200&h=200&fit=crop&auto=format",
+          alt: "チョコレート1",
+        },
+      ],
+      bottomImages: [
+        {
+          src: "https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=150&h=150&fit=crop&auto=format",
+          alt: "チョコレート2",
+        },
+      ],
+      className: "mt-[-48px] md:mt-0",
+    },
+    {
+      backgroundColor: "#FDF7E6",
+      communityName: "わがしのわ",
+      communityId: "wagashi",
+      title: "氷の和菓子",
+      hashColor: "text-amber-300/80",
+      mainImages: [
+        {
+          src: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=200&h=200&fit=crop&auto=format",
+          alt: "チョコレート1",
+        },
+      ],
+      bottomImages: [
+        {
+          src: "https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=150&h=150&fit=crop&auto=format",
+          alt: "チョコレート2",
+        },
+      ],
+      className: "mt-[-36px] md:mt-0",
+    },
+    {
+      backgroundColor: "#c8e6e8",
+      communityName: "My APOTHECARY",
+      communityId: "beauty",
+      title: "私の愛用品",
+      hashColor: "text-cyan-300/80",
+      mainImages: [
+        {
+          src: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=200&h=200&fit=crop&auto=format",
+          alt: "チョコレート1",
+        },
+      ],
+      bottomImages: [
+        {
+          src: "https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=150&h=150&fit=crop&auto=format",
+          alt: "チョコレート2",
+        },
+      ],
+      className: "mt-[-36px] md:mt-0",
+    },
+    {
+      backgroundColor: "#c8e6e6",
+      communityName: "My APOTHECARY",
+      communityId: "beauty",
+      title: "暑さを乗り切るますとアイテム",
+      hashColor: "text-cyan-300/80",
+      mainImages: [
+        {
+          src: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=200&h=200&fit=crop&auto=format",
+          alt: "チョコレート1",
+        },
+      ],
+      bottomImages: [
+        {
+          src: "https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=150&h=150&fit=crop&auto=format",
+          alt: "チョコレート2",
+        },
+      ],
+      className: "mt-[-48px] md:mt-0",
+    },
   ];
+
+  if (communityId) {
+    themes = themes.filter((theme) => theme.communityId === communityId);
+  } else {
+    themes = themes.slice(0, 3);
+  }
 
   return (
     <section className="relative mt-8 pb-6 overflow-hidden">
@@ -122,11 +231,12 @@ export function ThemesSection() {
               key={index}
               backgroundColor={theme.backgroundColor}
               communityName={theme.communityName}
+              communityId={theme.communityId}
               title={theme.title}
               hashColor={theme.hashColor}
               mainImages={theme.mainImages}
               bottomImages={theme.bottomImages}
-              className={theme.className}
+              className={index === 0 ? "" : "mt-[-36px] md:mt-0"}
             />
           ))}
         </div>

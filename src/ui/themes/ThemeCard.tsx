@@ -5,6 +5,7 @@ interface ThemeCardProps {
   backgroundColor: string;
   communityName: string;
   title: string;
+  communityId: string;
   hashColor: string;
   mainImages: {
     src: string;
@@ -29,6 +30,7 @@ export function ThemeCard({
   mainImages,
   bottomImages,
   collectionText,
+  communityId,
   className = ""
 }: ThemeCardProps) {
   return (
@@ -41,7 +43,7 @@ export function ThemeCard({
       <div className="relative p-2">
         {/* ヘッダー */}
         <div className="flex flex-col items-center justify-between mb-8 gap-1">
-          <Link href={`/communities/${communityName}`} className="text-gray-700 px-3 py-1.5 rounded-lg text-base font-medium z-10 underline">
+          <Link href={`/communities/${communityId}`} className="text-gray-700 px-3 py-1.5 rounded-lg text-base font-medium z-10 underline">
             {communityName}
           </Link>
           <h3 className="text-xl font-semibold text-gray-800 ml-2 z-10">

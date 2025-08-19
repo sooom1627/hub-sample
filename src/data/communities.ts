@@ -14,6 +14,7 @@ export interface Community {
   description: string;
   imageUrl: string;
   imageAlt: string;
+  logoUrl: string;
   bgGradient: string;
   buttonColor: string;
   tagColor: string;
@@ -27,8 +28,9 @@ export const communities: Community[] = [
   {
     id: "chocolate",
     name: "Le tour du chocolat",
-    description: "チョコレート好き大集合！愛しの推しについて語りましょう",
+    description: "チョコレート好きな人々が集まるコミュニティ。話して、食べて、つながって、仲間とともに奥深きチョコレートの旅へ。",
     imageUrl: "/isetan_choco_92x61.png",
+    logoUrl: "/isetan_choco_logo.png",
     imageAlt: "チョコレート",
     bgGradient: "from-amber-100 to-orange-100",
     buttonColor: "bg-amber-600 hover:bg-amber-700",
@@ -71,6 +73,7 @@ export const communities: Community[] = [
     name: "外国展コミュニティ",
     description: "英国展・フランス展・イタリア展の催事を愛するコミュニティ",
     imageUrl: "/isetan_gaikokuten_92x61.png",
+    logoUrl: "/isetan_gaikokuten_logo.png",
     imageAlt: "外国展",
     bgGradient: "from-blue-100 to-purple-100",
     buttonColor: "bg-blue-600 hover:bg-blue-700",
@@ -113,6 +116,7 @@ export const communities: Community[] = [
     name: "わがしのわ",
     description: "伝統の和菓子から最新の和菓子まで和菓子の世界に浸る",
     imageUrl: "/isetan_wagashi_92x61.png",
+    logoUrl: "/isetan_wagashi_logo.png",
     imageAlt: "和菓子",
     bgGradient: "from-green-100 to-teal-100",
     buttonColor: "bg-green-600 hover:bg-green-700",
@@ -155,6 +159,7 @@ export const communities: Community[] = [
     name: "My APOTHECARY",
     description: "自分らしい美しさに出会う美と健康を愛する人々が集うコミュニティ",
     imageUrl: "/isetan_my_apothecary_92x61.png",
+    logoUrl: "/isetan_beauty_logo.png",
     imageAlt: "美容",
     bgGradient: "from-pink-100 to-rose-100",
     buttonColor: "bg-pink-600 hover:bg-pink-700",
@@ -197,6 +202,7 @@ export const communities: Community[] = [
     name: "Parfun",
     description: "香水や香水文化に魅せられし人々のつどい香水コミュニティ",
     imageUrl: "/isetan_parfun_92x61.png",
+    logoUrl: "/isetan-parfon_logo.png",
     imageAlt: "香水",
     bgGradient: "from-purple-100 to-indigo-100",
     buttonColor: "bg-purple-600 hover:bg-purple-700",
